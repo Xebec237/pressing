@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-papier text-encre antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-indigo;
+  }
+}
+
+@layer components {
+  .champ {
+    @apply w-full rounded border border-trait bg-white px-3 py-2 text-sm
+           placeholder:text-neutral-400 focus:border-indigo focus:outline-none
+           focus:ring-1 focus:ring-indigo;
+  }
+  .etiquette {
+    @apply mb-1 block text-xs font-semibold uppercase tracking-wider text-neutral-500;
+  }
+  .bouton {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-indigo px-4 py-2
+           text-sm font-semibold text-white transition
+           hover:bg-indigo/90 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .bouton-secondaire {
+    @apply inline-flex items-center justify-center gap-2 rounded border border-trait
+           bg-white px-4 py-2 text-sm font-semibold text-encre transition
+           hover:bg-panneau disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .carte {
+    @apply rounded border border-trait bg-white;
+  }
+  .pastille {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs
+           font-semibold ring-1 ring-inset;
+  }
+  .surtitre {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500;
+  }
+}
